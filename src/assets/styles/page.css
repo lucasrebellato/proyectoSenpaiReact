@@ -1,0 +1,569 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Lato', sans-serif;
+    width: 100%;
+    text-decoration: none;
+    color: white;
+}
+
+body{
+    background-color: tomato;
+}
+
+h1{
+    margin: 20px 0px 20px 0px;
+    font-size: 30px;
+}
+
+p{
+    padding: 0px 20px 0px 20px;
+}
+
+.hidden{
+    display: none;
+}
+
+/* PRE HEADER */
+
+.pre-header{
+    border-bottom: 2px solid tomato;
+    height: 5vh;
+    background-color: #302f2f;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.log{
+    grid-column: 3;
+    text-align: end;
+    
+}
+
+/* HEADER */
+
+header{
+    border-bottom: 2px solid black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: #302f2f;
+    height: 100px;
+    border-bottom: tomato 2px solid;
+
+}
+
+.active{
+    background-color: tomato;
+}
+
+header img{
+    width: 80px;
+    margin: 10px 0px 0px 20px;
+}
+
+header button{
+    grid-column: 3;
+    background-color:#302f2f;
+    color: white;
+    font-size: 90px;
+    width: 50px;
+    height: 50px;
+    margin-top: 30px;
+    margin-left: 50px;
+ 
+}
+
+
+header h1{
+    display: none;
+}
+
+
+header a{
+    text-align: center;
+}
+
+.nav_1 {
+    text-decoration: none;
+    margin-top: 55px;
+    align-items: center;
+    margin-right: 20px;
+    background-color: #302f2f;
+    position: fixed;
+    top: 10.5vh;
+    width:100%;
+    height: (100% -60px);
+    left: 0%;
+    transition: left 0.5s;
+    z-index: 10;
+    position: absolute;
+  }
+
+.nav_menu{
+   display: none;
+ }
+  
+header li{
+   text-decoration: none;
+   line-height: 80px;
+   list-style-type: none;
+   border-bottom: 1px solid white;
+   display: flex;
+ }
+
+ /* FOOTER */
+
+footer{
+    height: 10vh;
+    background-color:#302f2f;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: solid 2px tomato;
+}
+
+footer p{
+    text-align: center;
+    display: none;
+}
+
+.social-networks{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-right: 1rem;
+}
+
+.social-networks a{
+    width: 20px;
+    margin-left: 10px;
+    font-size: 1rem;
+}
+
+footer a{
+    text-align: center;
+}
+
+.fa{
+    font-size: 30px;
+}
+      
+ /* PESTAÑA INICIO */
+
+#inicio{
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url(../imagenes/productos/cafeteria.jpg);
+    background-position: 75% 50%;
+    background-size: cover;
+}
+
+#inicio article{
+    position: absolute;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+}
+
+#inicio h1{
+    text-align: center;
+}
+
+
+/* PESTAÑA UBICACION */
+
+#ubication {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    background-image: url(../imagenes/productos/calle.jpg);
+    background-position: 50% 50%;
+    background-size: cover;
+}
+
+
+#ubication article{
+    position: absolute;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    display: grid;
+    grid-template-rows: repeat(1fr,3);
+    gap: 5px;
+}
+
+#ubication h1{
+    text-align: center;
+}
+
+#cel-map{
+    display: block;
+}
+
+#pc-map{
+    display: none;
+}
+
+/* PESTAÑA CONTACTO */
+
+#contact{
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url(../imagenes/contact.jpg);
+    background-position: 75% 50%;
+    background-size: cover;
+}
+
+#contact section{
+    position: absolute;
+    height: 100%;
+    padding: 10px;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#contact h1{
+    text-align: center;
+}
+
+#contact input{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    color: black!important;
+}
+
+#contact textarea{
+    color: black!important;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+#in-contact{
+    display: grid;
+    gap: 70px;
+}
+
+#contact button{
+    background-color: tomato;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+#contact button:hover{
+    background-color: black;
+}
+
+.error{
+    color: red;
+}
+
+.correct{
+    color:rgb(9, 245, 9);
+}
+
+#contact form{
+    margin: 5px;
+}
+
+/* PESTAÑA NOSOTROS */
+
+#about{
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url(../imagenes/fondo.jpg);
+    background-position: 50% 50%;
+    background-size: cover;
+}
+
+#about article{
+    position: absolute;
+    height: 100%;
+    padding: 10px;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#about h1{
+    text-align: center;
+}
+
+#about img{
+    margin: 20px;
+    width: 85%;
+}
+
+.info-pc{
+    display: none;
+}
+
+/* TIENDA */
+
+#shop{
+    padding:20px 0px 20px 0px;
+    background-image: url(../imagenes/fondo-black.jpg);
+    min-height: 100vh;
+}
+
+#shop h1{
+    text-align: center;
+}
+
+#coffee-holder{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+    
+}
+
+.product-conteiner{
+    margin: 15;
+    width: 150px;
+    padding: 5px;
+    background-color: #f2f2f2;
+    border-radius: 15px;
+    min-height: 250px;
+}
+
+.product-conteiner h3{
+    color: black!important;
+}
+
+.product-conteiner button{
+    background-color: #302f2f; 
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 15px;
+}
+
+.product-conteiner button:hover{
+    background-color: black;
+}
+
+.product-conteiner:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+}
+
+#food-holder{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+.price{
+    text-align: end;
+}
+
+#cart-holder{
+    background-color: #302f2f;
+}
+
+#cart-holder li{
+    display: flex;
+    margin-bottom: 2px;
+    border-bottom: 2px solid tomato;
+}
+
+#cart-holder button{
+    color: black!important;
+}
+
+#cart-holder input{
+    color: black!important;
+    width: 30px;
+}
+
+#cart{
+    background-color: #302f2f;
+    border: 2px solid tomato;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+@media (min-width:1025px){
+
+    header{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    nav{
+       margin-top: 18px;
+    }
+
+    .brand{
+        display: flex;
+     align-items: center;
+    }
+
+    .brand h1{
+       display: block;
+       margin-left: 15px;
+    }
+
+    .brand img{
+       display: none;
+    }
+
+
+    header button{
+       display: none !important;
+    }
+    
+
+    .nav_1 {
+        text-decoration: none;
+        margin-top: 0px;
+        align-items: center;
+        background-color: #302f2f;
+        width:100%;
+        top: auto;
+        position: static;
+        margin: 0px;  
+    }
+    
+    
+    .nav_menu{
+        display: flex;
+        border-bottom: 0px solid black;
+    }
+     
+    header li{
+        border-bottom: none;
+    }
+  
+
+    header li:hover{
+        background-color: rgb(151, 31, 10)    ;
+    }
+
+    .active{
+        background-color: tomato;
+        display: block;
+        text-align: center;
+    }
+
+     /* FOOTER */
+
+    footer p{
+         display: block;
+    }
+
+     /* PESTAÑA INICIO */
+
+    #inicio{
+       background-position: 50% 50%;
+    }
+     
+    #inicio article{
+        position: absolute;
+        top: 0;
+        background: rgba(0, 0, 0, 0.5);
+        width: 50%;
+        height: 100%;
+        padding: 15px;
+        background-position: none;
+    }
+
+    /* PESTAÑA NOSOTROS */
+
+    #about article{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    .info-cel{
+        display: none;
+    }
+
+    #photo-cel{
+        display: none;
+    }
+
+    .info-pc{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .info-pc img{
+        width: 100vw;
+        border-radius: 20px;
+        margin: 50px 0px 0px 40px;
+    }
+
+   
+
+    /* PESTAÑA UBICACION */
+
+
+    #ubication article{
+        display: flex;
+        flex-direction: column;
+        gap: 5vh;
+    }
+
+    /* PESTAÑA CONTACTO */
+
+    #contact input{
+        width: 40vw;
+        margin-bottom: 10px;
+    }
+    
+    #contact textarea{
+        color: black!important;
+        width: 700px;
+    }
+    
+    #in-contact{
+        display: grid;
+        gap: 70px;
+    }
+    
+    #contact button{
+        width: 30vw;
+        height: 50px;
+        background-color:#302f2f;
+    }
+
+    #in-contact{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 50px;
+    }
+
+    #email{
+        width: 180px;
+    }
+
+}
