@@ -13,6 +13,8 @@ import {
 const HeaderUs = () =>{
     const [path, setPath] = useState (window.location.pathname)
     
+    
+
 
     return (
         <header>
@@ -52,9 +54,3 @@ const HeaderUs = () =>{
 
 
 export default HeaderUs;
-
-{/* <li><Link to ="/Tienda"  className={(path==/Tienda ? "active" : "")}>Tienda</Link></li> 
-<li><Link to ="/Ubicacion"  className={(path==/Ubicacion ? "active" : "")}>Ubicación</Link></li>
-<li><Link to ="/Contacto"  className={(path==/Contacto ? "active" : "")}>Contacto</Link></li>
-<li><Link to ="/Nosotros" className={(path==/Nosotros ? "active" : "")}>Nosotros</Link></li>
-</ul> */}
