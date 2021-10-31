@@ -6,13 +6,15 @@ import React, { useEffect, useState } from "react";
 
 const Shop = () =>{
     const [coffees, setCoffees] = useState([])
-    // const [desserts, setDesserts] = useState([])
+    const [desserts, setDesserts] = useState([])
     const [errorMessageC, setErrorMessageC] = useState("")
     const [hasErrorC, setHasErrorC] = useState("")
+    const [errorMessageD, setErrorMessageD] = useState("")
+    const [hasErrorD, setHasErrorD] = useState("")
 
     useEffect(() => {
         fetch("http://localhost:4000/Coffees")
-        .then(data => data.json)
+        .then(data => data.json())
         .then(data =>{
             setCoffees(data);
             hasErrorC(false);
@@ -25,24 +27,76 @@ const Shop = () =>{
             )
     },[]) 
 
+    useEffect(() => {
+        fetch("http://localhost:4000/Desserts")
+        .then(data => data.json())
+        .then(data =>{
+            setDesserts(data);
+            hasErrorD(false);
+        }
+            )
+        .catch(e =>{
+            setErrorMessageD(e);
+            setHasErrorD(true);
+        }
+            )
+    },[]) 
+
+
     return (
         <main id="shop">
 
             <h1>Nuestros cafes</h1>
 
-            <div id="coffee-holder"></div>
+            <div id="coffee-holder">
+        {
+            hasErrorC &&(
+                <h1 className="Error">Se ha producido un error N°{errorMessageC}</h1>
+            )
 
+        }
+            {
+                    coffees.map(cafe =>{
+                        
+                        let id = cafe.id
+
+                        return (    
+                                
+                                 <div className="product-conteiner">
+                                    <h3>{cafe.name}</h3>
+                                    <img src={require("../../assets/shop/cafes/img-"+id+".jpg").default} alt={cafe.name}/>
+                                    <h3 className="price">${cafe.price}</h3>
+                                    <button onClick="addToCart('${cafe.id}')">Añadir</button>
+                                    </div>             
+                        )            
+                    })
+                } 
+
+         
+            </div>
+           
             <h1>Nuestros postres</h1>
 
             <div id="food-holder">
             {
-                    coffees.map(cafe =>{
-                        return (
-                                 <div class="product-conteiner">
-                                    <h3>{cafe.name}</h3>
-                                    <img src={require("../../assets/shop/img-1.jpg").default} alt={cafe.name}/>
-                                    <h3 class="price">${cafe.price}</h3>
-                                    <button onclick="addToCart('${cafe.id}')">Añadir</button>
+            hasErrorD &&(
+                <h1 className="Error">Se ha producido un error N°{errorMessageD}</h1>
+            )
+
+            }
+            
+            {
+                    desserts.map(dessert =>{
+
+                        let id = dessert.id
+
+                        return (    
+                                
+                                 <div className="product-conteiner">
+                                    <h3>{dessert.name}</h3>
+                                    <img src={require("../../assets/shop/postres/img-"+id+".jpg").default} alt={dessert.name}/>
+                                    <h3 className="price">${dessert.price}</h3>
+                                    <button onClick="addToCart('${cafe.id}')">Añadir</button>
                                     </div>             
                         )            
                     })
