@@ -17,7 +17,7 @@ const Shop = () =>{
         .then(data => data.json())
         .then(data =>{
             setCoffees(data);
-            hasErrorC(false);
+            setHasErrorC(false);
         }
             )
         .catch(e =>{
@@ -49,12 +49,12 @@ const Shop = () =>{
             <h1>Nuestros cafes</h1>
 
             <div id="coffee-holder">
-        {
+        {/* {
             hasErrorC &&(
                 <h1 className="Error">Se ha producido un error N°{errorMessageC}</h1>
             )
 
-        }
+        } */}
             {
                     coffees.map(cafe =>{
                         
@@ -78,12 +78,12 @@ const Shop = () =>{
             <h1>Nuestros postres</h1>
 
             <div id="food-holder">
-            {
+            {/* {
             hasErrorD &&(
                 <h1 className="Error">Se ha producido un error N°{errorMessageD}</h1>
             )
 
-            }
+            } */}
             
             {
                     desserts.map(dessert =>{

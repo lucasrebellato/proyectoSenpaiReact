@@ -8,49 +8,51 @@ const Contact = () => {
     const [name, setName] = useState("")
     const [lastname, setLastname] = useState ("")
     const [email, setEmail] = useState ("")
-    const [realName, setRealName] = useState (true)
-    const [realLastname, setRealLastname] = useState (true)
-    const [realEmail, setRealEmail] = useState (true)
+    const [falseName, setFalseName] = useState (false)
+    const [falseLastname, setFalseLastname] = useState (false)
+    const [falseEmail, setFalseEmail] = useState (false)
     const [allOk, setAllOk] = useState ("")
 
 
     const validateContact = () => {
 
-        console.log("hola")
+        
 
         let numRegEx = /\d/;
         let emailRegEx = /^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
 
         if(name.length < 2 || numRegEx.test(name)){
-            setRealName(false);
+            setFalseName(true);
         }else{
-            setRealName(true);
+            setFalseName(false);
         }
 
         if(lastname.length < 2 || numRegEx.test(lastname)){
-            setRealLastname(false);
+            setFalseLastname(true);
         }else{
-            setRealLastname(true);
+            setFalseLastname(false);
         }
 
         if(!emailRegEx.exec(email)){
-            setRealEmail(false);
+            setFalseEmail(true);
         }else{
-            setRealEmail(true);
+            setFalseEmail(false);
         }
 
-        if((realEmail && realLastname) && realLastname){
+        if((!falseEmail && !falseLastname) && !falseLastname){
+            setAllOk(false);
+           
+        }else{
+            console.log("hola")
             setAllOk(true);
             setName("")
             setLastname("")
             setEmail("")
-        }else{
-            setAllOk(false);
         }
 
-        console.log(realName)
-        console.log(realLastname)
-        console.log(realEmail)
+        // console.log(realName)
+        // console.log(realLastname)
+        // console.log(realEmail)
     }
 
 
@@ -74,21 +76,21 @@ const Contact = () => {
                     
                         <input type="text" name="name" id="name" placeholder="Nombre" onChange={e => setName (e.target.value)} value={name}/>
                         {
-                        !realName && (
+                        falseName && (
                             <p className="error">Verifique su nombre</p>
                         )
                         }
                         
                         <input type="text" name="lastname" id="lastname" placeholder="Apellido" onChange={e => setLastname (e.target.value)} value={lastname}/>
                         {
-                        !realLastname && (
+                        falseLastname && (
                             <p className="error">Verifique su apellido</p>
                         )
                         }
                         
                         <input type="text" name="email" id="email" placeholder="Correo electronico" onChange={e => setEmail (e.target.value)} value={email}/> 
                         {
-                        !realEmail && (
+                        falseEmail && (
                             <p className="error">Verifique su email</p>
                         )
                         }
