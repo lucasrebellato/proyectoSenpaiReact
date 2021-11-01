@@ -39,7 +39,7 @@ const Contact = () => {
             setFalseEmail(false);
         }
 
-        if((!falseEmail && !falseLastname) && !falseLastname){
+        if((!falseEmail && !falseLastname) && !falseName){
             setAllOk(false);
            
         }else{
