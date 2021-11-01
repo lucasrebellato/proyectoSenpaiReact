@@ -20,9 +20,11 @@ function App() {
   return (
     <body>
 
+      <Router>
+
       <PreHeader/>
 
-      <Router>
+     
 
       <Header/>
 
