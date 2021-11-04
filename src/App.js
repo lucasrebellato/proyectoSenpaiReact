@@ -14,6 +14,8 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import SignIn from './components/Sign/In';
+import SignUp from './components/Sign/Up';
 
  
 function App() {
@@ -22,6 +24,14 @@ function App() {
 
       <Router>
 
+      <Switch>
+      <Route exact path="/Sign-In">
+            <SignIn/>
+          </Route>
+          <Route exact path="/Sign-Up">
+            <SignUp/>
+          </Route>
+          <Route  path="/">
       <PreHeader/>
 
       <Header/>
@@ -48,13 +58,18 @@ function App() {
             <Contact />
           </Route>
         </Switch>
+
+      
    
-    </Router>
+    
 
       
 
     <Footer/>
-
+    </Route>
+    </Switch>
+    
+    </Router>
     </>
 
   );

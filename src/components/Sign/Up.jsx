@@ -9,14 +9,14 @@ import {
 
 
   const SignUp = () =>{
-    const [name, setEmail] = useState ("")
-    const [lastname, setPassword] = useState ("")
-    const [address, set] = useState (true)
-    const [phone, setPhone] = useState (true)
-    const [email, setEmail] = useState ("")
-    const [password, setPassword] = useState ("")
-    const [realEmail, setRealEmail] = useState (true)
-    const [realPassword, setRealPassword] = useState (true)
+    // const [name, setEmail] = useState ("")
+    // const [lastname, setPassword] = useState ("")
+    // const [address, set] = useState (true)
+    // const [phone, setPhone] = useState (true)
+    // const [email, setEmail] = useState ("")
+    // const [password, setPassword] = useState ("")
+    // const [realEmail, setRealEmail] = useState (true)
+    // const [realPassword, setRealPassword] = useState (true)
 
     return (
         <div id="signup-conteiner">

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import '../../assets/styles/page.css'
-// import * as utils from "../../js/validadores"
+import {validateNameOrLast} from "../../js/validadores"
 
 
 const Contact = () => {
@@ -23,43 +23,20 @@ const Contact = () => {
         let numRegEx = /\d/;
         let emailRegEx = /^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
 
-        if(name.length < 2 || numRegEx.test(name)){
-            auxName=true;
-        }else{
-            auxName=false;
-        }
+        auxName=validateNameOrLast(name);
 
-        if(lastName.length < 2 || numRegEx.test(lastName)){
-            auxLastName=true;
-        }else{
-            auxLastName=false;
-        }
+        auxLastName=(lastName.length < 2 || numRegEx.test(lastName));
 
-        if(!emailRegEx.exec(email)){
-            auxEmail=true;
-        }else{
-            auxEmail=false;
-        }
+        auxEmail=!emailRegEx.exec(email);
 
-        if((auxName  || auxLastName) || auxEmail){
-            setAllOk(false); 
-
-        }else{
-            
-            setAllOk(true);
-            cleanForm();   
-        }
-
+        ((auxName  || auxLastName) || auxEmail) ? setAllOk(false) : setAllOk(true);
+        
         setFalseName(auxName);
         setFalseLastName(auxLastName);
         setFalseEmail(auxEmail);
     }
 
-    const cleanForm = () =>{
-        setName("")
-        setLastName("")
-        setEmail("")
-    }
+   
 
 
 
