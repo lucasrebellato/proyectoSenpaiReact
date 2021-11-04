@@ -6,53 +6,59 @@ import '../../assets/styles/page.css'
 const Contact = () => {
 
     const [name, setName] = useState("")
-    const [lastname, setLastname] = useState ("")
+    const [lastName, setLastName] = useState ("")
     const [email, setEmail] = useState ("")
-    const [falseName, setFalseName] = useState (false)
-    const [falseLastname, setFalseLastname] = useState (false)
-    const [falseEmail, setFalseEmail] = useState (false)
-    const [allOk, setAllOk] = useState ("")
+    const [falseName, setFalseName] = useState ("")
+    const [falseLastName, setFalseLastName] = useState ("")
+    const [falseEmail, setFalseEmail] = useState ("")
+    const [allOk, setAllOk] = useState (false)
+
 
 
     const validateContact = () => {
 
-        
-
+        let auxName = false;
+        let auxLastName = false;
+        let auxEmail = false;
         let numRegEx = /\d/;
         let emailRegEx = /^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
 
         if(name.length < 2 || numRegEx.test(name)){
-            setFalseName(true);
+            auxName=true;
         }else{
-            setFalseName(false);
+            auxName=false;
         }
 
-        if(lastname.length < 2 || numRegEx.test(lastname)){
-            setFalseLastname(true);
+        if(lastName.length < 2 || numRegEx.test(lastName)){
+            auxLastName=true;
         }else{
-            setFalseLastname(false);
+            auxLastName=false;
         }
 
         if(!emailRegEx.exec(email)){
-            setFalseEmail(true);
+            auxEmail=true;
         }else{
-            setFalseEmail(false);
+            auxEmail=false;
         }
 
-        if((falseEmail  || falseLastname) || falseName){
-            setAllOk(false);
-           
+        if((auxName  || auxLastName) || auxEmail){
+            setAllOk(false); 
+
         }else{
-            console.log("hola")
+            
             setAllOk(true);
-            setName("")
-            setLastname("")
-            setEmail("")
+            cleanForm();   
         }
 
-        // console.log(realName)
-        // console.log(realLastname)
-        // console.log(realEmail)
+        setFalseName(auxName);
+        setFalseLastName(auxLastName);
+        setFalseEmail(auxEmail);
+    }
+
+    const cleanForm = () =>{
+        setName("")
+        setLastName("")
+        setEmail("")
     }
 
 
@@ -81,9 +87,9 @@ const Contact = () => {
                         )
                         }
                         
-                        <input type="text" name="lastname" id="lastname" placeholder="Apellido" onChange={e => setLastname (e.target.value)} value={lastname}/>
+                        <input type="text" name="lastname" id="lastname" placeholder="Apellido" onChange={e => setLastName (e.target.value)} value={lastName}/>
                         {
-                        falseLastname && (
+                        falseLastName && (
                             <p className="error">Verifique su apellido</p>
                         )
                         }

@@ -31,8 +31,8 @@ p{
     border-bottom: 2px solid tomato;
     height: 5vh;
     background-color: #302f2f;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    justify-content: flex-end;
     align-items: center;
     padding-left: 10px;
     padding-right: 10px;
@@ -42,6 +42,14 @@ p{
     grid-column: 3;
     text-align: end;
     
+}
+
+.pre-header a{
+    width: 100px;
+}
+
+.pre-header a:hover{
+    color: tomato;
 }
 
 /* HEADER */
@@ -150,6 +158,10 @@ footer a{
 
 .fa{
     font-size: 30px;
+}
+
+.fa:hover{
+    color: tomato;
 }
       
  /* PESTAÑA INICIO */

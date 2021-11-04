@@ -11,6 +11,7 @@ const Shop = () =>{
     const [hasErrorC, setHasErrorC] = useState("")
     const [errorMessageD, setErrorMessageD] = useState("")
     const [hasErrorD, setHasErrorD] = useState("")
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         fetch("http://localhost:4000/Coffees")
@@ -49,6 +50,9 @@ const Shop = () =>{
             <h1>Nuestros cafes</h1>
 
             <div id="coffee-holder">
+
+
+
         {/* {
             hasErrorC &&(
                 <h1 className="Error">Se ha producido un error N°{errorMessageC}</h1>

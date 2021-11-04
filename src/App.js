@@ -18,41 +18,44 @@ import {
  
 function App() {
   return (
-    <body>
+    <>
 
       <Router>
 
       <PreHeader/>
 
-     
-
       <Header/>
-
       
       <Switch>
+        
           <Route exact path="/">
             <Index />
           </Route>
-          <Route path="/Tienda">
+        
+         <Route path="/Tienda">
             <Shop />
           </Route>
+        
           <Route path="/Ubicacion">
             <Ubication />
           </Route>
+        
           <Route path="/Nosotros">
             <About />
           </Route>
+        
           <Route path="/Contacto">
             <Contact />
           </Route>
         </Switch>
+   
     </Router>
 
       
 
-      <Footer/>
+    <Footer/>
 
-    </body>
+    </>
 
   );
 }
