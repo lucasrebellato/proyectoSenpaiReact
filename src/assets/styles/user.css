@@ -4,10 +4,14 @@
     box-sizing: border-box;
 }
 
+
 body{
     background-image: url(../imagenes/fondo-black.jpg);
     height: 100vh;
     font-family:'Lato', sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
 }
 
 .error{
@@ -15,7 +19,7 @@ body{
 }
 
 .correct{
-    color: green;
+    color: rgb(0, 255, 0);
 }
 
 .hidden{
@@ -23,6 +27,10 @@ body{
 }
 
 /* LOGIN */
+
+input{
+    color: black;
+}
 
 #login-conteiner{
     background-color:rgba(0, 0, 0, 0.5);
@@ -76,6 +84,9 @@ body{
 #login-conteiner a{
     color: white;
     text-align: end;
+}
+#login-conteiner a:hover{
+    color: tomato;
 }
 
 /* SIGN UP */

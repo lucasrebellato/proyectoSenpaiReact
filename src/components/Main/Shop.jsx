@@ -1,6 +1,7 @@
 import react from 'react'
 import '../../assets/styles/page.css'
 import React, { useEffect, useState } from "react";
+import ReactLoading from 'react-loading';
 
 
 
@@ -19,11 +20,13 @@ const Shop = () =>{
         .then(data =>{
             setCoffees(data);
             setHasErrorC(false);
+            setLoading(false);
         }
             )
         .catch(e =>{
-            setErrorMessageC(e);
+            setErrorMessageC(e.message);
             setHasErrorC(true);
+            setLoading(false);
         }
             )
     },[]) 
@@ -33,12 +36,14 @@ const Shop = () =>{
         .then(data => data.json())
         .then(data =>{
             setDesserts(data);
-            hasErrorD(false);
+            setHasErrorD(false);
+            setLoading(false);
         }
             )
         .catch(e =>{
-            setErrorMessageD(e);
+            setErrorMessageD(e.message);
             setHasErrorD(true);
+            setLoading(false);
         }
             )
     },[]) 
@@ -51,14 +56,18 @@ const Shop = () =>{
 
             <div id="coffee-holder">
 
+        {
+            loading &&(
+                <ReactLoading type={"spin"} />
+                )
 
+        }    
 
-        {/* {
+        {
             hasErrorC &&(
-                <h1 className="Error">Se ha producido un error N°{errorMessageC}</h1>
+                <h1 className="error">Se ha producido un error N°{errorMessageC}</h1>
             )
-
-        } */}
+        }
             {
                     coffees.map(cafe =>{
                         
@@ -82,12 +91,20 @@ const Shop = () =>{
             <h1>Nuestros postres</h1>
 
             <div id="food-holder">
-            {/* {
-            hasErrorD &&(
-                <h1 className="Error">Se ha producido un error N°{errorMessageD}</h1>
-            )
+            
+            {
+                loading &&(
+                    <ReactLoading type={"spin"} />
+                    )
 
-            } */}
+            }    
+         
+           
+            {
+            hasErrorD &&(
+                <h1 className="error">Se ha producido un error N°{errorMessageD}</h1>
+            )
+            }
             
             {
                     desserts.map(dessert =>{
@@ -100,19 +117,19 @@ const Shop = () =>{
                                     <h3>{dessert.name}</h3>
                                     <img src={require("../../assets/shop/postres/img-"+id+".jpg").default} alt={dessert.name}/>
                                     <h3 className="price">${dessert.price}</h3>
-                                    <button onClick="addToCart('${cafe.id}')">Añadir</button>
+                                    <button onClick="addToCart('${cafe.id}')">Añadir</button> 
                                     </div>             
                         )            
                     })
                 }
-            </div>
+            </div>  
 
             <div id="cart">
                 
                 <h1>Carrito</h1>
 
                 <ul id="cart-holder">
-                
+                    
                 </ul>
             
                 <p>Total $<span id="total-holder">0</span></p>

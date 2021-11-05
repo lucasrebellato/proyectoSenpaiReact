@@ -6,23 +6,15 @@ let passRegEx = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
 
 /* funciones */
 
-const validateNameOrLast = (nombre) =>{
-    return (nombre.length < 2 || numRegEx.test(nombre));
-}
+export const validateNameOrLast = (nombre) => (nombre.length < 2 || numRegEx.test(nombre));
 
-const validateEmail = (email) =>{
-    return !emailRegEx.exec(email);
-}
+export const validateEmail = (email) => !emailRegEx.exec(email);
 
-const validatePassword = (password) =>{
-    return (password.length < 6 || !passRegEx.exec(password));
-}
+export const validatePassword = (password) => (password.length < 6 || !passRegEx.exec(password));
 
-const validateAddress = (address) =>{
-    return (address.length < 6);
-}
+export const validateAddress = (address) => (address.length < 6);
 
-const validateTelephone = (number) =>{
-    return (number.length < 8);
-}
+export const validateTelephone = (number) => (number.length < 8);
+
+
 

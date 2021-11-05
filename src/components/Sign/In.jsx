@@ -6,19 +6,30 @@ import {
     Route,
     Link
   } from "react-router-dom";
+import * as utils from "../../js/validadores"
 
 
   
 const SignIn = () =>{
     const [email, setEmail] = useState ("")
     const [password, setPassword] = useState ("")
-    const [realEmail, setRealEmail] = useState (true)
-    const [realPassword, setRealPassword] = useState (true)
+    const [falseEmail, setFalseEmail] = useState ("")
+    const [falsePassword, setFalsePassword] = useState ("")
+    const [allOk, setAllOk] = useState (false)
 
- 
+    const validateSignIn = () => {
+
+        (utils.validateEmail(email)  || utils.validatePassword(password)) ? setAllOk(false) : setAllOk(true);
+        
+        setFalsePassword(utils.validatePassword(password));
+        setFalseEmail(utils.validateEmail(email));
+    }
+
+
+
     return(
         <div id="login-conteiner">
-        <Link to= "/Shop"  className="fa fa-arrow-circle-left"></Link>
+        <Link to= "/Tienda"  className="fa fa-arrow-circle-left" style={{width:"50px"}}></Link>
         <h1>Ingresar</h1>
         <h1 className="fa fa-user" style={{fontSize: "40px"},{color: "tomato"}}></h1>
         
@@ -27,7 +38,7 @@ const SignIn = () =>{
             <h3>Correo electronico</h3>
             <input type="text" name="email" id="login-email" placeholder="Correo electronico" onChange={e => setEmail (e.target.value)} value={email}/>
             {
-                !realEmail && (
+                falseEmail && (
                     <p className="error">Verifique su email</p>
                     )
             }
@@ -35,15 +46,20 @@ const SignIn = () =>{
             <h3>Contraseña</h3>
             <input type="password" name="password" id="login-password" placeholder="Contraseña" onChange={e => setPassword (e.target.value)} value={password}/>
             {
-                !realPassword && (
+                falsePassword && (
                     <p className="error">Verifique su contraseña</p>
                     )
             }
             
-            <button type="button" onClick="validateLogin()">Ingresar</button>
+            <button type="button" onClick={() => validateSignIn()}>Ingresar</button>
+            {
+                        allOk && (
+                            <p className="correct">Ha ingresado correctamente {email}</p> 
+                        )
+                        }
         </form>
         
-        <Link to ="/signIn">Crear cuenta</Link>
+        <Link to ="/Sign-Up"  style={{width:"100px"}}>Crear cuenta</Link>
 
     </div>
     );

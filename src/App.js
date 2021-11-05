@@ -22,52 +22,51 @@ function App() {
   return (
     <>
 
-      <Router>
+    <Router>
 
       <Switch>
-      <Route exact path="/Sign-In">
-            <SignIn/>
-          </Route>
-          <Route exact path="/Sign-Up">
-            <SignUp/>
-          </Route>
-          <Route  path="/">
-      <PreHeader/>
+          <Route exact path="/Sign-In">
+              <SignIn/>
+            </Route>
+            
+            <Route exact path="/Sign-Up">
+              <SignUp/>
+            </Route>
+            
+            <Route  path="/">
+              <PreHeader/>
 
-      <Header/>
-      
-      <Switch>
-        
-          <Route exact path="/">
-            <Index />
-          </Route>
-        
-         <Route path="/Tienda">
-            <Shop />
-          </Route>
-        
-          <Route path="/Ubicacion">
-            <Ubication />
-          </Route>
-        
-          <Route path="/Nosotros">
-            <About />
-          </Route>
-        
-          <Route path="/Contacto">
-            <Contact />
-          </Route>
-        </Switch>
+              <Header/>
+              
+              <Switch>
+                
+                <Route exact path="/">
+                  <Index />
+                </Route>
+                
+                <Route path="/Tienda">
+                    <Shop />
+                  </Route>
+                
+                  <Route path="/Ubicacion">
+                    <Ubication />
+                  </Route>
+                
+                  <Route path="/Nosotros">
+                    <About />
+                  </Route>
+                
+                  <Route path="/Contacto">
+                    <Contact />
+                  </Route>
+            
+            </Switch>
 
-      
-   
-    
+        <Footer/>
 
-      
+        </Route>
 
-    <Footer/>
-    </Route>
-    </Switch>
+      </Switch>
     
     </Router>
     </>
