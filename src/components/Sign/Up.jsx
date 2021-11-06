@@ -25,10 +25,12 @@ import * as utils from "../../js/validadores"
     const [allOk, setAllOk] = useState (false)
 
 
-    const validateSignUp = () =>{
-
+    const validateSignUp = () => {
         (utils.validateNameOrLast(name) || utils.validateNameOrLast(lastName) || utils.validateAddress(address) || utils.validateTelephone(phone) || utils.validatePassword(password) || utils.validateEmail(email)) ? setAllOk(false) : setAllOk(true);
-
+        updateInfo();
+    }
+    
+    const updateInfo = () => {
         setFalseName(utils.validateNameOrLast(name));
         setFalseLastName(utils.validateNameOrLast(lastName));
         setFalseAddress(utils.validateAddress(address));
@@ -39,7 +41,7 @@ import * as utils from "../../js/validadores"
 
 
     return (
-        <div id="signup-conteiner">
+        <div id="signup-container">
             <Link to="/Sign-In" className="fa fa-arrow-circle-left"  style={{width:"50px"}}></Link>
 
             <h1>Crear cuenta</h1>

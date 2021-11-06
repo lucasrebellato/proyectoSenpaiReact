@@ -16,9 +16,11 @@ const Contact = () => {
 
 
     const validateContact = () => {
-
-        ((utils.validateNameOrLast(name)  || utils.validateNameOrLast(lastName)) || utils.validateEmail(email)) ? setAllOk(false) : setAllOk(true);
-        
+    ((utils.validateNameOrLast(name)  || utils.validateNameOrLast(lastName)) || utils.validateEmail(email)) ? setAllOk(false) : setAllOk(true); 
+    updateInfo();
+    }
+    
+    const updateInfo = () => {
         setFalseName(utils.validateNameOrLast(name));
         setFalseLastName(utils.validateNameOrLast(lastName));
         setFalseEmail(utils.validateEmail(email));
@@ -67,7 +69,7 @@ const Contact = () => {
                         <button type="button" onClick={() => validateContact()}>Enviar</button>
                         {
                         allOk && (
-                            <p className="correct">Mensaje enviado correctamente</p> 
+                            <p className="correct">Mensaje enviado correctamente, gracias {name}</p> 
                         )
                         }
                        

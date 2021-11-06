@@ -353,7 +353,7 @@ footer .fa:hover{
     
 }
 
-.product-conteiner{
+.product-container{
     margin: 15;
     width: 150px;
     padding: 5px;
@@ -362,11 +362,11 @@ footer .fa:hover{
     min-height: 250px;
 }
 
-.product-conteiner h3{
+.product-container h3{
     color: black!important;
 }
 
-.product-conteiner button{
+.product-container button{
     background-color: #302f2f; 
     border: none;
     padding: 15px 32px;
@@ -377,11 +377,11 @@ footer .fa:hover{
     border-radius: 15px;
 }
 
-.product-conteiner button:hover{
+.product-container button:hover{
     background-color: black;
 }
 
-.product-conteiner:hover{
+.product-container:hover{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
 }
 

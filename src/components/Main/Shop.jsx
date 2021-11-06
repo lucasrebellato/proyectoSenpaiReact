@@ -75,7 +75,7 @@ const Shop = () =>{
 
                         return (    
                                 
-                                 <div className="product-conteiner">
+                                 <div className="product-container">
                                     <h3>{cafe.name}</h3>
                                     <img src={require("../../assets/shop/cafes/img-"+id+".jpg").default} alt={cafe.name}/>
                                     <h3 className="price">${cafe.price}</h3>
@@ -113,7 +113,7 @@ const Shop = () =>{
 
                         return (    
                                 
-                                 <div className="product-conteiner">
+                                 <div className="product-container">
                                     <h3>{dessert.name}</h3>
                                     <img src={require("../../assets/shop/postres/img-"+id+".jpg").default} alt={dessert.name}/>
                                     <h3 className="price">${dessert.price}</h3>
@@ -157,7 +157,7 @@ export default Shop;
 
 // coffeUpload(){      
 //     return(
-//         `   <div class="product-conteiner">
+//         `   <div class="product-container">
 //                 <h3>${this.name}</h3>
 //                 <img src="../shop/img-${this.id}.jpg" alt="${this.name}">
 //                 <h3 class="price">$${this.price}</h3>
@@ -170,7 +170,7 @@ export default Shop;
 
 // foodUpload(){  
 //     return(
-//         `   <div class="product-conteiner">
+//         `   <div class="product-container">
 //                 <h3>${this.name}</h3>
 //                 <img src="../shop/img-${this.id}.jpg" alt="${this.name}">
 //                 <h3 class="price">$${this.price}</h3>

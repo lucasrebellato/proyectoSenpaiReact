@@ -17,18 +17,19 @@ const SignIn = () =>{
     const [falsePassword, setFalsePassword] = useState ("")
     const [allOk, setAllOk] = useState (false)
 
-    const validateSignIn = () => {
-
-        (utils.validateEmail(email)  || utils.validatePassword(password)) ? setAllOk(false) : setAllOk(true);
-        
+    const validateSignIn = () =>  {
+        (utils.validateEmail(email)  || utils.validatePassword(password)) ? setAllOk(false) : setAllOk(true); 
+        updateInfo();
+    }
+    
+    const updateInfo = () => {     
         setFalsePassword(utils.validatePassword(password));
         setFalseEmail(utils.validateEmail(email));
     }
 
 
-
     return(
-        <div id="login-conteiner">
+        <div id="login-container">
         <Link to= "/Tienda"  className="fa fa-arrow-circle-left" style={{width:"50px"}}></Link>
         <h1>Ingresar</h1>
         <h1 className="fa fa-user" style={{fontSize: "40px"},{color: "tomato"}}></h1>
