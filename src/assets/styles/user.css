@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+#root{
+    display: flex;
+    justify-content: center;
+}
 
 body{
     background-image: url(../imagenes/fondo-black.jpg);
