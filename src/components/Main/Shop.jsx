@@ -9,21 +9,26 @@ import CartSection from '../Shop/Cart';
 
 const Shop = () =>{
     const [cart, setCart] = useState([])
+    const [total, setTotal] = useState(0)
 
     const addToCart = (product) => {
+
+        setTotal(total + product.price)
         let index = cart.indexOf(product)
-        if(index >= 0){
-            setCart(cart[index].quantity+=1);
+        if(index != -1){
+            cart[index].quantity+=1;
+            setCart(cart);
         }else{
         setCart(cart.concat(product));
     }
-        console.log(cart)
     }
 
     const deleteFromCart = (product) => {
-        // let index = cart.indexOf(product)
-        
-        console.log(cart)
+        setTotal(total - (product.price * product.quantity))
+        let index = cart.indexOf(product);
+        cart.splice(index,1);
+        setCart(cart)
+
     }
 
     return (
@@ -33,7 +38,7 @@ const Shop = () =>{
            
            <DessertsSection addToCart={addToCart}/>
  
-           <CartSection cart={cart} delete={deleteFromCart}/>
+           <CartSection cart={cart} delete={deleteFromCart} total={total}/>
 
     </main>
     ) 

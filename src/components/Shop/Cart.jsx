@@ -5,7 +5,6 @@ import React, { useEffect, useState } from "react";
 
 
 const CartSection = (props) =>{
-    const [total, setTotal] = useState(10);
 
     return (
         <main>
@@ -32,7 +31,7 @@ const CartSection = (props) =>{
                         return<li>
                             
                             <p>{product.name}</p>
-                            <input id="quantity" value={product.quantity}/>
+                            <input id="quantity" value={product.quantity} disabled/>
                             <p type="number">${product.price * product.quantity}</p>
                             <button onClick={() => props.delete(product)}>Eliminar</button>
                             
@@ -45,7 +44,7 @@ const CartSection = (props) =>{
 
                 </ul>
             
-                <p>$<span id="total-holder">{total}</span></p>
+                <p>$<span id="total-holder">{props.total}</span></p>
             
             </div>
 
