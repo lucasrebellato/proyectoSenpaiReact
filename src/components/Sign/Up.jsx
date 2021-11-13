@@ -41,6 +41,7 @@ import * as utils from "../../js/validadores"
 
 
     return (
+    <div id="sign-container">    
         <div id="signup-container">
             <Link to="/Sign-In" className="fa fa-arrow-circle-left"  style={{width:"50px"}}></Link>
 
@@ -107,6 +108,7 @@ import * as utils from "../../js/validadores"
             
 
         </div>
+    </div>
     )
     
 

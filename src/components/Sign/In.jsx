@@ -29,6 +29,7 @@ const SignIn = () =>{
 
 
     return(
+    <div id="sign-container">    
         <div id="login-container">
         <Link to= "/Tienda"  className="fa fa-arrow-circle-left" style={{width:"50px"}}></Link>
         <h1>Ingresar</h1>
@@ -62,6 +63,7 @@ const SignIn = () =>{
         
         <Link to ="/Sign-Up"  style={{width:"100px"}}>Crear cuenta</Link>
 
+        </div>
     </div>
     );
 }

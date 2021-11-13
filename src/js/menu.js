@@ -2,6 +2,7 @@
 
 const elBoton = document.querySelector("button");
 const navMenu = document.querySelector(".nav_1");
-elBoton.addEventListener("click", () =>  {
+ 
+export   const navegatorMenu = () =>  {
     navMenu.classList.toggle("nav_menu");
-});
+};

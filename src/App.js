@@ -25,41 +25,28 @@ function App() {
     <Router>
 
       <Switch>
-          <Route exact path="/Sign-In">
-              <SignIn/>
-            </Route>
+          <Route exact path="/Sign-In" component={SignIn}/>
             
-            <Route exact path="/Sign-Up">
-              <SignUp/>
-            </Route>
+          <Route exact path="/Sign-Up" component={SignUp}/>
             
-            <Route  path="/">
-              <PreHeader/>
+          <Route  path="/">
+           
+            <PreHeader/>
 
-              <Header/>
+            <Header/>
               
-              <Switch>
+            <Switch>
                 
-                <Route exact path="/">
-                  <Index />
-                </Route>
-                
-                <Route path="/Tienda">
-                    <Shop />
-                  </Route>
-                
-                  <Route path="/Ubicacion">
-                    <Ubication />
-                  </Route>
-                
-                  <Route path="/Nosotros">
-                    <About />
-                  </Route>
-                
-                  <Route path="/Contacto">
-                    <Contact />
-                  </Route>
+              <Route exact path="/" component={Index}/>
             
+              <Route path="/Tienda" component={Shop}/>
+                    
+              <Route path="/Ubicacion" component={Ubication}/>
+
+              <Route path="/Nosotros" component={About}/>
+
+              <Route path="/Contacto" component={Contact}/>
+                          
             </Switch>
 
         <Footer/>

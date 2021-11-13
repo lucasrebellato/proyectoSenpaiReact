@@ -7,15 +7,14 @@ import {
     Route,
     Link
   } from "react-router-dom";
+import { navegatorMenu } from "../js/menu";
 
 
   
 const HeaderUs = () =>{
+
     const [path, setPath] = useState (window.location.pathname)
     
-    
-
-
     return (
         <header>
         
@@ -32,7 +31,7 @@ const HeaderUs = () =>{
         
         </div>
         
-        <button className="fa fa-bars" ></button>
+        <button className="fa fa-bars" onClick={"() => navegatorMenu()"}></button>
         
         <nav>
 

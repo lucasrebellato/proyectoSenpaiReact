@@ -375,6 +375,7 @@ footer .fa:hover{
     display: inline-block;
     font-size: 16px;
     border-radius: 15px;
+    cursor: pointer;
 }
 
 .product-container button:hover{
