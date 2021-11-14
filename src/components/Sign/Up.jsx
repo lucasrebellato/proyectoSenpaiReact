@@ -101,7 +101,7 @@ import * as utils from "../../js/validadores"
                 <button type="button" onClick={() => validateSignUp()}>Crear</button> 
                 {
                     allOk && (
-                        <p className="correct">Tu usuario ha sido creado {name}</p> 
+                        <p className="correct">Tu usuario ha sido creado {name}, gracias!</p> 
                     )
                 }
             </form>
