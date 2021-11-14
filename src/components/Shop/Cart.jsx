@@ -5,9 +5,6 @@ import {
     Link
   } from "react-router-dom";
 
-
-
-
 const CartSection = (props) =>{
 
     return (
@@ -18,14 +15,7 @@ const CartSection = (props) =>{
                 <h1>Carrito</h1>
 
                 <ul id="cart-holder">
-                
-
-              
-                {
-                    console.log(props.cart)
-                }
-          
-
+            
                 {   
                     props.cart.length == 0 &&(
                         <p style={{textAlign:"center"}} className="error notProduct">Usted no ha añadido productos</p>
@@ -49,14 +39,16 @@ const CartSection = (props) =>{
                     })
                 }
                 
-
-
-
                 </ul>
             
                 <p id="total-holder">Subtotal: ${props.total}</p>
-
-                <Link to="/Sign-In" id="buy-button">Comprar</Link>
+               
+                {   
+                    props.cart.length != 0 &&(
+                        <Link to="/Sign-In" id="buy-button">Comprar</Link>
+                    )
+                }
+                
 
             
             </div>
