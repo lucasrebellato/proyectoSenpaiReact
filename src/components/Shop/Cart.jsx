@@ -1,5 +1,9 @@
 import '../../assets/styles/page.css'
 import React, { useEffect, useState } from "react";
+import {
+    BrowserRouter as Router,
+    Link
+  } from "react-router-dom";
 
 
 
@@ -51,6 +55,9 @@ const CartSection = (props) =>{
                 </ul>
             
                 <p id="total-holder">Subtotal: ${props.total}</p>
+
+                <Link to="/Sign-In" id="buy-button">Comprar</Link>
+
             
             </div>
 
