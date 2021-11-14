@@ -378,13 +378,6 @@ footer .fa:hover{
     cursor: pointer;
 }
 
-.product-container button:hover{
-    background-color: black;
-}
-
-.product-container:hover{
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
-}
 
 #food-holder{
     display: flex;
@@ -402,13 +395,38 @@ footer .fa:hover{
 }
 
 #cart-holder li{
-    display: flex;
-    margin-bottom: 2px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     border-bottom: 2px solid tomato;
+    height: 60px;
+    align-items: center;
+    padding-left: 7px;
+    padding-right: 7px;
 }
 
+#cart-holder img{
+    display: none;
+}
+
+
 #cart-holder button{
-    color: black!important;
+    color: white!important;
+    background-color: black; /* Green */
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    cursor: pointer;
+    border: tomato solid 2px;
+    border-radius: 20px;
+}
+
+#total-holder{
+    text-align: right;
+    font-size: 16px;
+    height: 30px;
 }
 
 #cart-holder input{
@@ -580,5 +598,20 @@ footer .fa:hover{
     #email{
         width: 180px;
     }
+    
+    /* PESTAÑA TIENDA */
 
+    #cart-holder img{
+        display: block;
+        width: 50px;
+    }
+    
+    .product-container button:hover{
+        background-color: black;
+    }
+    
+    .product-container:hover{
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+    }
+    
 }

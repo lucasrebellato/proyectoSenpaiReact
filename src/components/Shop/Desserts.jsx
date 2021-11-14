@@ -58,7 +58,7 @@ const DessertsSection = (props) =>{
                                 
                                  <div className="product-container" key={id}>
                                     <h3>{dessert.name}</h3>
-                                    <img src={require("../../assets/shop/postres/"+id+".jpg").default} alt={dessert.name}/>
+                                    <img src={require("../../assets/shop/"+id+".jpg").default} alt={dessert.name}/>
                                     <h3 className="price">${dessert.price}</h3>
                                     <button onClick={() => props.addToCart(dessert)}>Añadir</button> 
                                     </div>             

@@ -90,7 +90,7 @@ import * as utils from "../../js/validadores"
                     )
                 }
 
-                <h3>Contraseña</h3>
+                <h3>Contraseña (al menos 8 caracteres entre min, mayus, y numeros)</h3>
                 <input type="password" name="password" id="signup-password" placeholder="Contraseña" onChange={e => setPassword (e.target.value)} value={password}/>
                 {
                     falsePassword && (

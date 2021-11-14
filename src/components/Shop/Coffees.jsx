@@ -59,7 +59,7 @@ const CoffeesSection = (props) =>{
                                     
                                     <div className="product-container" key={id}>
                                         <h3>{coffee.name}</h3>
-                                        <img src={require("../../assets/shop/cafes/"+id+".jpg").default} alt={coffee.name}/>
+                                        <img src={require("../../assets/shop/"+id+".jpg").default} alt={coffee.name}/>
                                         <h3 className="price">${coffee.price}</h3>
                                         <button onClick={() => props.addToCart(coffee)}>Añadir</button>
                                         </div>             

@@ -24,9 +24,13 @@ const Shop = () =>{
     }
 
     const deleteFromCart = (product) => {
-        setTotal(total - (product.price * product.quantity))
+        setTotal(total - product.price)
         let index = cart.indexOf(product);
+        if(cart[index].quantity>1){
+            cart[index].quantity--;
+        }else{
         cart.splice(index,1);
+        }
         setCart(cart)
 
     }

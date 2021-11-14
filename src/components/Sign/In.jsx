@@ -7,6 +7,7 @@ import {
     Link
   } from "react-router-dom";
 import * as utils from "../../js/validadores"
+import { getDefaultNormalizer } from '@testing-library/dom';
 
 
   
@@ -16,10 +17,14 @@ const SignIn = () =>{
     const [falseEmail, setFalseEmail] = useState ("")
     const [falsePassword, setFalsePassword] = useState ("")
     const [allOk, setAllOk] = useState (false)
+    const [IsUser, setIsUser] = useState(false)
+
 
     const validateSignIn = () =>  {
+        
         (utils.validateEmail(email)  || utils.validatePassword(password)) ? setAllOk(false) : setAllOk(true); 
         updateInfo();
+        
     }
     
     const updateInfo = () => {     
@@ -56,9 +61,10 @@ const SignIn = () =>{
             <button type="button" onClick={() => validateSignIn()}>Ingresar</button>
             {
                         allOk && (
-                            <p className="correct">Ha ingresado correctamente {email}</p> 
+                            <p className="correct">Ha ingresado correctamente, {email}</p> 
                         )
                         }
+        
         </form>
         
         <Link to ="/Sign-Up"  style={{width:"100px"}}>Crear cuenta</Link>
