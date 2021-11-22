@@ -1,7 +1,10 @@
 import '../../assets/styles/page.css'
 import React, { useEffect, useState } from "react";
 import ReactLoading from 'react-loading';
-
+import {
+    BrowserRouter as Router,
+    Link
+  } from "react-router-dom";
 
 
 const DessertsSection = (props) =>{
@@ -60,7 +63,8 @@ const DessertsSection = (props) =>{
                                     <h3>{dessert.name}</h3>
                                     <img src={require("../../assets/shop/"+id+".jpg").default} alt={dessert.name}/>
                                     <h3 className="price">${dessert.price}</h3>
-                                    <button onClick={() => props.addToCart(dessert)}>Añadir</button> 
+                                    <button id="link-button" onClick={() => props.details(dessert)}><Link to="/Tienda/Detalles" id="details-button" >detalles...</Link></button>
+                                    <button id="add-button" onClick={() => props.addToCart(dessert)}>Añadir</button> 
                                     </div>             
                         )            
                     })

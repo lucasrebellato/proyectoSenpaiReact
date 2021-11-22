@@ -1,6 +1,10 @@
 import '../../assets/styles/page.css'
 import React, { useEffect, useState } from "react";
 import ReactLoading from 'react-loading';
+import {
+    BrowserRouter as Router,
+    Link
+  } from "react-router-dom";
 
 
 
@@ -61,7 +65,8 @@ const CoffeesSection = (props) =>{
                                         <h3>{coffee.name}</h3>
                                         <img src={require("../../assets/shop/"+id+".jpg").default} alt={coffee.name}/>
                                         <h3 className="price">${coffee.price}</h3>
-                                        <button onClick={() => props.addToCart(coffee)}>Añadir</button>
+                                        <button id="link-button" onClick={() => props.details(coffee)}><Link to="/Tienda/Detalles" id="details-button" >detalles...</Link></button>
+                                        <button id="add-button" onClick={() => props.addToCart(coffee)}>Añadir</button>
                                         </div>             
                             )            
                         })

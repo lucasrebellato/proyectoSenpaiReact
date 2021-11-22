@@ -6,7 +6,7 @@ import Index from './components/Main/Index'
 import Shop from './components/Main/Shop'
 import Contact from './components/Main/Contact'
 import About from './components/Main/About'
-import Ubication from './components/Main/Ubication'
+import Location from './components/Main/Location'
 import Footer from './components/Footer';
 import {
   BrowserRouter as Router,
@@ -41,7 +41,7 @@ function App() {
             
               <Route path="/Tienda" component={Shop}/>
                     
-              <Route path="/Ubicacion" component={Ubication}/>
+              <Route path="/Ubicacion" component={Location}/>
 
               <Route path="/Nosotros" component={About}/>
 
@@ -49,7 +49,7 @@ function App() {
                           
             </Switch>
 
-        <Footer/>
+            <Footer/>
 
         </Route>
 

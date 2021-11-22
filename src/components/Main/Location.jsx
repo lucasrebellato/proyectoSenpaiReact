@@ -3,9 +3,9 @@ import '../../assets/styles/page.css'
 import Iframe from 'react-iframe'
 
 
-const Ubication = () =>{
+const Location = () =>{
     return (
-        <main id="ubication">
+        <main id="location">
 
         <article>
 
@@ -28,4 +28,4 @@ const Ubication = () =>{
     ) 
 }
 
-export default Ubication;
+export default Location;

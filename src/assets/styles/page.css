@@ -199,7 +199,7 @@ footer .fa:hover{
 
 /* PESTAÑA UBICACION */
 
-#ubication {
+#location {
     position: relative;
     overflow: hidden;
     height: 100vh;
@@ -209,7 +209,7 @@ footer .fa:hover{
 }
 
 
-#ubication article{
+#location article{
     position: absolute;
     top: 0;
     background: rgba(0, 0, 0, 0.5);
@@ -221,7 +221,7 @@ footer .fa:hover{
     gap: 5px;
 }
 
-#ubication h1{
+#location h1{
     text-align: center;
 }
 
@@ -366,7 +366,7 @@ footer .fa:hover{
     color: black!important;
 }
 
-.product-container button{
+#add-button{
     background-color: #302f2f; 
     border: none;
     padding: 15px 32px;
@@ -460,6 +460,51 @@ footer .fa:hover{
     border: tomato solid 2px;
     border-radius: 20px;
     width: 70px;
+}
+
+#details-button{
+    color: black;
+    text-decoration: none;
+}
+
+#go-shop{
+    font-size: 50px;
+    text-align:center;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+#comeback-shop{
+    font-size: 50px;
+    cursor: pointer;
+}
+
+#product-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    background-color: #302f2f;
+    border: 2px solid tomato;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+#details-holder img{
+    width: 50vw;
+}
+
+#details-holder{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#link-button{
+    background-color: transparent;
+    border: none;
+    text-align: left;
 }
 
 @media (min-width:1025px){
@@ -581,7 +626,7 @@ footer .fa:hover{
     /* PESTAÑA UBICACION */
 
 
-    #ubication article{
+    #location article{
         display: flex;
         flex-direction: column;
         gap: 5vh;
@@ -627,12 +672,24 @@ footer .fa:hover{
         width: 50px;
     }
     
-    .product-container button:hover{
+    #add-button:hover{
         background-color: black;
     }
     
     .product-container:hover{
         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+    }
+
+    #details-button:hover{
+        color: tomato;
+    }
+
+    #go-shop:hover{
+        color: tomato;
+    }
+    
+    #comeback-shop:hover{
+        color: tomato;
     }
     
 }

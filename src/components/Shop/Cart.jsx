@@ -11,7 +11,7 @@ const CartSection = (props) =>{
         <main>
 
             <div id="cart">
-                
+                <Link to= "/Tienda" id="comeback-shop" className="fa fa-arrow-circle-left"></Link>
                 <h1>Carrito</h1>
 
                 <ul id="cart-holder">
