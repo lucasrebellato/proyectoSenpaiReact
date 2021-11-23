@@ -21,16 +21,22 @@ const Details = (props) =>{
                 <h1>Detalles del producto</h1>
 
                 {   
+               
                 <div id="details-holder">
-                    <h1>{props.product.name}</h1>
 
                     <img src={require("../../assets/shop/"+id+".jpg").default} alt={props.product.name}/>
+
+                    <div id="details-item">
+                    <h1>{props.product.name}</h1>
                 
                     <h2>Descripción:<br/>{props.product.description}</h2>
 
                     <h2>Precio: ${props.product.price}</h2>
+
+                    </div>
                 </div>
-                }
+               
+               }
             
             </div>
         

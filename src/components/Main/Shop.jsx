@@ -61,9 +61,10 @@ const Shop = () =>{
                         <CoffeesSection addToCart={addToCart} details={detailsOf}/>
                         
                         <DessertsSection addToCart={addToCart} details={detailsOf}/>
-                        {
-                        <Link to= "/Tienda/Carrito" id="go-shop" className="fa fa-shopping-cart">...{cart.length}</Link>
-                        }
+                        { cart.length != 0 &&(
+                        <Link to= "/Tienda/Carrito" id="go-shop" className="fa fa-shopping-cart">...tiene {cart.length} producto/os añadido/os</Link>
+                        )
+                    }
                     </Route>
                     
                     <Route path="/Tienda/Carrito">
